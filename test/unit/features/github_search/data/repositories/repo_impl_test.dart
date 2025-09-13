@@ -7,7 +7,6 @@ import 'package:syncrow_test/features/github_search/data/data_sources/local_data
 import 'package:syncrow_test/features/github_search/data/data_sources/remote_data_source.dart';
 import 'package:syncrow_test/features/github_search/data/models/user_model.dart';
 import 'package:syncrow_test/features/github_search/data/repositories/github_repo_impl.dart';
-import 'package:syncrow_test/features/github_search/domain/entites/user.dart';
 
 class MockRemoteDataSource extends Mock implements GithubRemoteDataSource {}
 class MockLocalDataSource extends Mock implements GithubLocalDataSource {}

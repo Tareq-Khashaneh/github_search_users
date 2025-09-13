@@ -41,7 +41,7 @@ class UserDetailsScreen extends GetView<UserDetailsController> {
                           ),
                         ),
                         errorWidget: (context, url, error) =>
-                            Icon(Icons.error, color: Colors.red, size: 28.sp),
+                            Icon(Icons.error, color: Colors.grey, size: 28.sp),
                       ),
                     ),
                   ),

@@ -53,7 +53,7 @@ void main() {
       expect(
         controller.searchController.text,
         '',
-      ); // controller does not auto update text
+      );
 
       expect(controller.query, 'john');
     });

@@ -27,13 +27,13 @@ class MyApp extends StatelessWidget {
           getPages: AppRoutes.pages,
           initialRoute: AppRoutes.searchRoute,
           theme: ThemeData(
-            appBarTheme: const AppBarTheme(
+            appBarTheme:  AppBarTheme(
               iconTheme: IconThemeData(color: Colors.white),
               backgroundColor: AppColors.primary,
               centerTitle: true,
               titleTextStyle: TextStyle(
                 color: Colors.white,
-                fontSize: 30,
+                fontSize: 30.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
