@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:syncrow_test/features/github_search/domain/entites/user.dart';
 import 'package:syncrow_test/features/github_search/presentation/controllers/user_details_controller.dart';
 import 'package:syncrow_test/features/github_search/presentation/screens/user_details_screen.dart';
@@ -41,12 +40,15 @@ class FakeUserDetailsController extends GetxController
 void main() {
   late FakeUserDetailsController fakeUserDetailsController;
 
-
   setUp(() {
     fakeUserDetailsController = FakeUserDetailsController();
     Get.put<UserDetailsController>(fakeUserDetailsController);
   });
-  group("User details screen test:", () {
+  tearDown(() {
+    Get.reset();
+  });
+
+  group("User details screen test", () {
     testWidgets('should display user info correctly', (tester) async {
       await tester.pumpWidget(
         ScreenUtilInit(
@@ -87,6 +89,7 @@ void main() {
           builder: (_, __) => GetMaterialApp(home: UserDetailsScreen()),
         ),
       );
+      await tester.pump();
       await tester.ensureVisible(find.text('View GitHub Profile'));
       await tester.tap(find.text('View GitHub Profile'));
       await tester.pump(Duration(seconds: 2));
